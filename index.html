@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmeldeseite</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Anmeldeseite</h2>
+
+  <form id="loginForm">
+    <label for="password">Passwort</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <button type="button" onclick="checkPassword()">Anmelden</button>
+  </form>
+<br>
+  <div id="alertMessage" class="alert" style="display: none;"></div>
+</div>
+
+<script>
+function checkPassword() {
+  var currentDate = new Date();
+  var currentHour = currentDate.getHours();
+  
+  var enteredPassword = document.getElementById("password").value;
+  var expectedPassword = currentHour.toString();
+  
+  if (enteredPassword === expectedPassword) {
+   
+
+    window.location.href = "vent30-br.html";
+  } else {
+    document.getElementById("alertMessage").style.display = "block";
+    document.getElementById("alertMessage").textContent = "Falsches Passwort. Bitte versuchen Sie es erneut.";
+  }
+}
+</script>
+
+</body>
+</html>
